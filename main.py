@@ -121,7 +121,7 @@ def get_args_parser():
         Used for small local view cropping of multi-crop.""")
 
     # Misc
-    parser.add_argument('--data_path', default='/scratch/shashank/dataset/WT_videos/', type=str,
+    parser.add_argument('--data_path', default='~/dataset/WT_videos/', type=str,
         help='Please specify path to the ImageNet training data.')
     parser.add_argument('--output_dir', default="/scratch/shashank/checkpoint/dino_WT/vanilla/", type=str, help='Path to save logs and checkpoints.')
     parser.add_argument('--saveckp_freq', default=20, type=int, help='Save checkpoint every x epochs.')
@@ -149,7 +149,7 @@ def train_dino(args):
     
     
     
-    dataset = WT_dataset_1vid(args.data_path, 
+    dataset = WT_dataset_1vid(args.data_path, #DoRA's own dataset
                 args.frame_per_clip,  
                 args.step_between_clips,
                 transform=transform) 
